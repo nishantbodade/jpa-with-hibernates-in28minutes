@@ -15,8 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.in28minutes.database.databasedemo.entity.Person;
 import com.in28minutes.database.databasedemo.jdbc.PersonJdbcDao;
 
-@SpringBootApplication
-public class DatabaseDemoApplication  implements CommandLineRunner{
+//@SpringBootApplication
+public class DatabaseDemoApplicationJDBC  implements CommandLineRunner{
 
 	private Logger logger=LoggerFactory.getLogger(this.getClass());
 	
@@ -24,7 +24,7 @@ public class DatabaseDemoApplication  implements CommandLineRunner{
 	PersonJdbcDao dao;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(DatabaseDemoApplication.class, args);
+		SpringApplication.run(DatabaseDemoApplicationJDBC.class, args);
 	}
 
 	@Override

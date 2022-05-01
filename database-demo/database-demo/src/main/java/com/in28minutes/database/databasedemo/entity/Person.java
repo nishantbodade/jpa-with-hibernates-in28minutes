@@ -2,6 +2,7 @@ package com.in28minutes.database.databasedemo.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +13,8 @@ public class Person {
 	private int id;
 	private String name;
 	private String location;
+	
+	@Column(name = "BIRTH_DATE")
 	private Date birthdate;
 	
 	public Person() {

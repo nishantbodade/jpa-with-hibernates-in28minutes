@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.in28minutes.database.databasedemo.entity.Person;
 
-@Repository
+//@Repository
 public class PersonJdbcDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
