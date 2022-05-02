@@ -44,16 +44,8 @@ public class DatabaseDemoApplicationJPA  implements CommandLineRunner{
 		  logger.info("insert  -> {}", jpaRepository.insert(new Person( "Nishant",
 		  "india", new Date())));
 		
-		/*
-		 * logger.info("all data => {}",dao.findAll());
-		 * logger.info("user id data delete => {}",dao.deleteById(10001));
-		 * 
-		 * logger.info("Inserting 10004 -> {}", dao.insert(new Person(10004, "Tara",
-		 * "Berlin", new Date())));
-		 * 
-		 * logger.info("Update 10003 -> {}", dao.update(new Person(10003, "Pieter",
-		 * "Utrecht", new Date())));
-		 */
+		  jpaRepository.deleteById(1);
+		 
 		
 	}
 
