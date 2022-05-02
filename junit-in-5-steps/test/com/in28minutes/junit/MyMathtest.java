@@ -7,7 +7,12 @@ import org.junit.jupiter.api.Test;
 class MyMathtest {
 
 	@Test
-	void test() {
+	void sum_with3numbers() {
+		MyMath math=new MyMath();
+		
+		int result=math.sum(new int[] {1,2,3,4});
+		assertEquals(10, result);
+		
 			}
 
 }
