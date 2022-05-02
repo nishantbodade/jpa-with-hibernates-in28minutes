@@ -45,6 +45,8 @@ public class DatabaseDemoApplicationJPA  implements CommandLineRunner{
 		  "india", new Date())));
 		
 		  jpaRepository.deleteById(1);
+		  
+		  logger.info("findAll  -> {}", jpaRepository.findAll());
 		 
 		
 	}
