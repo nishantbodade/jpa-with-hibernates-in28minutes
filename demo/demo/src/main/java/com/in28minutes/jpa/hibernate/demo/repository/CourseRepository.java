@@ -38,9 +38,20 @@ public class CourseRepository {
 	}
 	
 	public void playWithEntityManager() {
-		Course course = new Course("Web Services in 100 Steps");
-		em.persist(course);
-		course.setName("Web Services in 100 Steps - Updated");
+		Course course1 = new Course("Web Services in 100 Steps");
+		em.persist(course1);	
+		
+		Course course2 = new Course("Angular Js in 100 Steps");
+		em.persist(course2);
+
+		em.flush();
+
+		course1.setName("Web Services in 100 Steps - Updated");
+		course2.setName("Angular Js in 100 Steps - Updated");
+		
+		em.refresh(course1);
+		
+		em.flush();
 	}
 
 }
