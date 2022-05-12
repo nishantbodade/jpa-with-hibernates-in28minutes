@@ -1,11 +1,11 @@
-package com.in28minutes.jpa.hibernate.demo.Entity;
+package com.in28minutes.jpa.hibernate.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Cource {
+public class Course {
 
 	@Id
 	@GeneratedValue
@@ -13,10 +13,10 @@ public class Cource {
 	private String name;
 	
 		
-	public Cource() {
+	public Course() {
 	}
 	
-	public Cource(String name) {
+	public Course(String name) {
 		this.name = name;
 	}
 	public Long getId() {
@@ -31,6 +31,13 @@ public class Cource {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 	
 	
 	
