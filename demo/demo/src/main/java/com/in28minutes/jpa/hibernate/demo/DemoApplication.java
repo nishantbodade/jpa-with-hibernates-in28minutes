@@ -28,6 +28,8 @@ public class DemoApplication implements CommandLineRunner {
 		
 		logger.info("course 10001 details => {}",course);
 		
+		repository.deleteById(10001L);
+		
 	}
 
 }
