@@ -28,7 +28,7 @@ public class DemoApplication implements CommandLineRunner {
 		
 		logger.info("course 10001 details => {}",course);
 		
-		
+		repository.save(new Course("microservice in 100 steps"));
 		
 	}
 
