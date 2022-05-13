@@ -1,21 +1,34 @@
 package com.in28minutes.jpa.hibernate.demo.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+
 @Entity
-//@Table(name = "course")
+
 public class Course {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	//@Column(name="name", nullable = false)
+
 	private String name;
+	
+	@UpdateTimestamp
+	private LocalDateTime lastUpdatedDate;
+	
+	@CreationTimestamp
+	private LocalDateTime createdDate;
+	
 	
 		
 	public Course() {
