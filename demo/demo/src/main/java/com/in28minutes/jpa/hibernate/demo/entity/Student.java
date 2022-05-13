@@ -26,7 +26,7 @@ public class Student {
 	private String name;
 	
 	@OneToOne
-	private Passport passport;
+	private Passport passport; 
 
 	protected Student() {
 	}
