@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,7 +15,12 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 @Entity
-
+@NamedQueries(
+		value = {
+				@NamedQuery(name="query_get_allcourses",query = "select c from Course c"),
+				@NamedQuery(name = "query_get_JPA",query = "select c from Course c where name like '%JPA%'")
+				
+		})
 public class Course {
 
 	@Id
