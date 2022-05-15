@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.in28minutes.jpa.hibernate.demo.DemoApplication;
 import com.in28minutes.jpa.hibernate.demo.entity.Course;
+import com.in28minutes.jpa.hibernate.demo.entity.Passport;
 import com.in28minutes.jpa.hibernate.demo.entity.Student;
 
 @RunWith(SpringRunner.class)
@@ -33,11 +34,22 @@ class StudentRepositoryTest {
 
 	@Test
 	@Transactional
-	void retriveStudemtAndPassportDetails() {
+	void retriveStudentAndPassportDetails() {
 		
 	 Student student=em.find(Student.class , 20001L);
 	 logger.info("student {}",student);
 	 logger.info("passport {}",student.getPassport());
+
+		
+	}
+	
+	@Test
+	@Transactional
+	void retrivePassportAndStudentAssociateDetails() {
+		
+	 Passport passport=em.find(Passport.class , 40001L);
+	 logger.info("passport {}",passport);
+	 logger.info("Student {}",passport.getStudent());
 
 		
 	}
