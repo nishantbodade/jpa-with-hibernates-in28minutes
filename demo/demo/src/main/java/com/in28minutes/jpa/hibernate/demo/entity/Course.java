@@ -1,6 +1,8 @@
 package com.in28minutes.jpa.hibernate.demo.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -36,6 +39,9 @@ public class Course {
 	@CreationTimestamp
 	private LocalDateTime createdDate;
 	
+	@OneToMany(mappedBy = "course")
+	List<Review> reviews=new ArrayList<Review>();
+	
 	
 		
 	public Course() {
@@ -55,6 +61,19 @@ public class Course {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void addReviews(Review reviews) {
+		this.reviews.add(reviews);
+	}
+	
+	public void removeReviews(Review reviews) {
+		this.reviews.remove(reviews);
 	}
 
 	@Override
