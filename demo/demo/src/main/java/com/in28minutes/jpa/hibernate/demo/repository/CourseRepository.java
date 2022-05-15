@@ -2,15 +2,19 @@ package com.in28minutes.jpa.hibernate.demo.repository;
 
 import javax.persistence.EntityManager;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.in28minutes.jpa.hibernate.demo.entity.Course;
+import com.in28minutes.jpa.hibernate.demo.entity.Review;
 
 @Repository
 @Transactional
 public class CourseRepository {
+	Logger logger=LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	EntityManager em;
@@ -44,6 +48,28 @@ public class CourseRepository {
 		Course course2=findById(10001L);
 		course2.setName("JPA demo-updated");
 
+	}
+
+	public void addRevieworCourse() {
+		// get the course 10003
+		Course course=findById(10003L);
+		logger.info("course reviews {}",course.getReviews());
+		
+		//add 2 review to it
+		Review review1=new Review("5", "Great hand-on stuff");
+		Review review2=new Review("5", "Hatsoff");
+		
+		//setting the relationship
+		course.addReviews(review1);
+		review1.setCourse(course);
+		
+		course.addReviews(review2);
+		review2.setCourse(course);
+	
+		//save it to database
+		em.persist(review1);
+		em.persist(review2);
+		
 	}
 
 }

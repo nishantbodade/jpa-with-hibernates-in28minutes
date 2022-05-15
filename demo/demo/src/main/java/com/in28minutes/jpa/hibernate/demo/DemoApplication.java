@@ -13,12 +13,12 @@ import com.in28minutes.jpa.hibernate.demo.repository.StudentRepository;
 
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
-	
-	private Logger logger=LoggerFactory.getLogger(this.getClass());
-	
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 	@Autowired
-	private CourseRepository  courseRepository; 
-	
+	private CourseRepository courseRepository;
+
 	@Autowired
 	private StudentRepository studentRepository;
 
@@ -28,8 +28,10 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		studentRepository.saveStudentWithPassport();
+		//studentRepository.saveStudentWithPassport();
 		//repository.playWithEntityManager();
+		courseRepository.addRevieworCourse();
+		
 		
 	}
 
