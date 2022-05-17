@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -42,6 +43,9 @@ public class Course {
 	@OneToMany(mappedBy = "course")
 	List<Review> reviews=new ArrayList<Review>();
 	
+	@ManyToMany
+	List<Student> students=new ArrayList<Student>();
+	
 	
 		
 	public Course() {
@@ -74,6 +78,16 @@ public class Course {
 	
 	public void removeReviews(Review reviews) {
 		this.reviews.remove(reviews);
+	}
+	
+	
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void addStudents(Student students) {
+		this.students.add(students);
 	}
 
 	@Override
