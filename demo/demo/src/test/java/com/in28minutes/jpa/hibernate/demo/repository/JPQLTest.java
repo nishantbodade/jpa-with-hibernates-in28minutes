@@ -19,7 +19,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.in28minutes.jpa.hibernate.demo.DemoApplication;
-import com.in28minutes.jpa.hibernate.demo.entity.Course;
+import com.in28minutes.jpa.hibernate.demo.entity.Employee;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = DemoApplication.class )
@@ -39,15 +39,15 @@ class JPQLTest {
 	
 	@Test
 	void jpql_typed() {
-		TypedQuery<Course> query = em.createNamedQuery("query_get_allcourses",Course.class);
-		List<Course> list= query.getResultList();
+		TypedQuery<Employee> query = em.createNamedQuery("query_get_allcourses",Employee.class);
+		List<Employee> list= query.getResultList();
 		logger.info(list.toString());
 	}
 	
 	@Test
 	void jpql_where() {
-		TypedQuery<Course> query = em.createNamedQuery("query_get_JPA",Course.class);
-		List<Course> list= query.getResultList();
+		TypedQuery<Employee> query = em.createNamedQuery("query_get_JPA",Employee.class);
+		List<Employee> list= query.getResultList();
 		logger.info(list.toString());
 	}
 	

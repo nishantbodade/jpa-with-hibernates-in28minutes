@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.in28minutes.jpa.hibernate.demo.entity.Course;
+import com.in28minutes.jpa.hibernate.demo.entity.Employee;
 import com.in28minutes.jpa.hibernate.demo.entity.Review;
 
 @Repository
@@ -21,16 +21,16 @@ public class CourseRepository {
 	@Autowired
 	EntityManager em;
 	
-	public Course findById(long id) {
-		return em.find(Course.class, id);
+	public Employee findById(long id) {
+		return em.find(Employee.class, id);
 	}
 	
 	public void deleteById(Long id) {
-		Course course=findById(id);
+		Employee course=findById(id);
 		em.remove(course);
 	}
 	
-	public Course save(Course course) {
+	public Employee save(Employee course) {
 		
 		if(course.getId()==null) {
 			em.persist(course);
@@ -44,17 +44,17 @@ public class CourseRepository {
 	}
 	
 	public void playWithEntityManager() {
-		Course course1 = new Course("Web Services in 100 Steps");
+		Employee course1 = new Employee("Web Services in 100 Steps");
 		em.persist(course1);
 		
-		Course course2=findById(10001L);
+		Employee course2=findById(10001L);
 		course2.setName("JPA demo-updated");
 
 	}
 
 	public void addRevieworCourse() {
 		// get the course 10003
-		Course course=findById(10003L);
+		Employee course=findById(10003L);
 		logger.info("course reviews {}",course.getReviews());
 		
 		//add 2 review to it
@@ -76,7 +76,7 @@ public class CourseRepository {
 
 	public void addRevieworCourse(Long courseId,List<Review> reviews) {
 		// get the course 10003
-		Course course=findById(courseId);
+		Employee course=findById(courseId);
 		logger.info("course reviews {}",course.getReviews());
 		
 		//add 2 review to it

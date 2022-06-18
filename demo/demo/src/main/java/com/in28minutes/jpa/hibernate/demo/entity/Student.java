@@ -38,7 +38,7 @@ public class Student {
 	@JoinTable(name="STUDENT_COURSE",
 			   joinColumns=@JoinColumn(name="STUDENT_ID"),
 			   inverseJoinColumns=@JoinColumn(name="COURSE_ID"))
-	List<Course> courses=new ArrayList<Course>();
+	List<Employee> courses=new ArrayList<Employee>();
 	
 	protected Student() {
 	}
@@ -71,11 +71,11 @@ public class Student {
 	
 	
 
-	public List<Course> getCourses() {
+	public List<Employee> getCourses() {
 		return courses;
 	}
 
-	public void addCourses(Course courses) {
+	public void addCourses(Employee courses) {
 		this.courses.add(courses);
 	}
 

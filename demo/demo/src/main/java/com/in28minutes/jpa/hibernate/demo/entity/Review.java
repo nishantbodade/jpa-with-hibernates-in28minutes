@@ -30,7 +30,7 @@ public class Review {
 	private String description;
 	
 	@ManyToOne
-	private Course course;
+	private Employee course;
 
 	protected Review() {
 	}
@@ -61,11 +61,11 @@ public class Review {
 	}
 	
 
-	public Course getCourse() {
+	public Employee getCourse() {
 		return course;
 	}
 
-	public void setCourse(Course course) {
+	public void setCourse(Employee course) {
 		this.course = course;
 	}
 

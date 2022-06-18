@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.in28minutes.jpa.hibernate.demo.DemoApplication;
-import com.in28minutes.jpa.hibernate.demo.entity.Course;
+import com.in28minutes.jpa.hibernate.demo.entity.Employee;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = DemoApplication.class )
@@ -32,7 +32,7 @@ class NativeQueriesTest {
 	@Test
 	void nativequeries_basic() {
 
-		Query query = em.createNativeQuery("select * from course",Course.class);
+		Query query = em.createNativeQuery("select * from course",Employee.class);
 		List list=query.getResultList();
 		logger.info(list.toString());
 
@@ -41,7 +41,7 @@ class NativeQueriesTest {
 	@Test
 	void nativequeries_with_parameter() {
 
-		Query query = em.createNativeQuery("select * from course where id=?",Course.class);
+		Query query = em.createNativeQuery("select * from course where id=?",Employee.class);
 		query.setParameter(1, 10001L);
 		List list=query.getResultList();
 		logger.info(list.toString());
@@ -50,7 +50,7 @@ class NativeQueriesTest {
 	@Test
 	void nativequeries_with_name_parameter() {
 
-		Query query = em.createNativeQuery("select * from course where id=:id",Course.class);
+		Query query = em.createNativeQuery("select * from course where id=:id",Employee.class);
 		query.setParameter("id", 10001L);
 		List list=query.getResultList();
 		logger.info(list.toString());

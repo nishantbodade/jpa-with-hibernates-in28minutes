@@ -10,7 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.in28minutes.jpa.hibernate.demo.entity.Course;
+import com.in28minutes.jpa.hibernate.demo.entity.Employee;
 import com.in28minutes.jpa.hibernate.demo.entity.Review;
 import com.in28minutes.jpa.hibernate.demo.entity.Student;
 import com.in28minutes.jpa.hibernate.demo.repository.CourseRepository;
@@ -45,7 +45,7 @@ public class DemoApplication implements CommandLineRunner {
 
 		//studentRepository.inserthardcodedStudentAndCourse();
 
-		studentRepository.insertStudentAndCourse(new Student("jack"),new Course("Microservice in 100 steps"));
+		studentRepository.insertStudentAndCourse(new Student("jack"),new Employee("Microservice in 100 steps"));
 
 	}
 

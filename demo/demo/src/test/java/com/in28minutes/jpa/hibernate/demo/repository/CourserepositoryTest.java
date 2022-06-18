@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.in28minutes.jpa.hibernate.demo.DemoApplication;
-import com.in28minutes.jpa.hibernate.demo.entity.Course;
+import com.in28minutes.jpa.hibernate.demo.entity.Employee;
 import com.in28minutes.jpa.hibernate.demo.entity.Review;
 
 @RunWith(SpringRunner.class)
@@ -33,7 +33,7 @@ class CourserepositoryTest {
 	@Test
 	void findById_basic() {
 		
-		Course course=repository.findById(10001L);
+		Employee course=repository.findById(10001L);
 		assertEquals("JPA demo", course.getName());
 		
 	}
@@ -52,7 +52,7 @@ class CourserepositoryTest {
 	void save_basic() {
 
 		//get course
-		Course course=repository.findById(10001L);
+		Employee course=repository.findById(10001L);
 		assertEquals("JPA demo", course.getName());
 		
 		//update details
@@ -61,7 +61,7 @@ class CourserepositoryTest {
 		
 		//check value
 		
-		Course course2=repository.findById(10001L);
+		Employee course2=repository.findById(10001L);
 		assertEquals("JPA UPDATE", course.getName());
 		
 		
@@ -77,7 +77,7 @@ class CourserepositoryTest {
 	@Test
 	@Transactional
 	public void retriveReviewForCorse() {
-		Course course=repository.findById(10001L);
+		Employee course=repository.findById(10001L);
 		logger.info("{}",course.getReviews());
 	}
 	
