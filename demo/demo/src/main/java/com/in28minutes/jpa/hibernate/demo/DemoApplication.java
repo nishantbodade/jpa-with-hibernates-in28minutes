@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.in28minutes.jpa.hibernate.demo.entity.Employee;
 import com.in28minutes.jpa.hibernate.demo.entity.Review;
-import com.in28minutes.jpa.hibernate.demo.entity.Student;
 import com.in28minutes.jpa.hibernate.demo.repository.CourseRepository;
 import com.in28minutes.jpa.hibernate.demo.repository.StudentRepository;
 
@@ -36,17 +35,21 @@ public class DemoApplication implements CommandLineRunner {
 		//studentRepository.saveStudentWithPassport();
 		//repository.playWithEntityManager();
 		//courseRepository.addRevieworCourse();  //hard coded
-//		List<Review> reviews=new ArrayList<Review>();
-//		reviews.add(new Review("5", "Great hand-on stuff"));
-//		reviews.add(new Review("5", "Hatsoff"));
-//		
-//		courseRepository.addRevieworCourse(10003L, reviews);
+		List<Review> reviews=new ArrayList<Review>();
+		reviews.add(new Review("5", "Great hand-on stuff"));
+		reviews.add(new Review("5", "Hatsoff"));
+		
+		courseRepository.addRevieworCourse(10003L, reviews);
 		
 
+<<<<<<< HEAD
 		//studentRepository.inserthardcodedStudentAndCourse();
 
 		studentRepository.insertStudentAndCourse(new Student("jack"),new Employee("Microservice in 100 steps"));
+=======
+>>>>>>> parent of 4f80645 (. Step 40 - ManyToMany Mapping - Insert Student and Course)
 
+		
 	}
 
 }

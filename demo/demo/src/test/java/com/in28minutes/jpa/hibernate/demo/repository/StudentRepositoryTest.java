@@ -53,16 +53,5 @@ class StudentRepositoryTest {
 
 		
 	}
-	
-	@Test
-	@Transactional
-	void retriveStudentAndCourse() {
 
-		Student student=em.find(Student.class, 20001L);
-	 logger.info("student {}",student);
-	 logger.info("courses {}",student.getCourses());
-
-
-		
-	}
 	}

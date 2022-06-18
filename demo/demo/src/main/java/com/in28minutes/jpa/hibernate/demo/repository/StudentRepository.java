@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+<<<<<<< HEAD
 import com.in28minutes.jpa.hibernate.demo.entity.Employee;
+=======
+>>>>>>> parent of 4f80645 (. Step 40 - ManyToMany Mapping - Insert Student and Course)
 import com.in28minutes.jpa.hibernate.demo.entity.Passport;
 import com.in28minutes.jpa.hibernate.demo.entity.Student;
 
@@ -52,6 +55,7 @@ public class StudentRepository {
 
 
 	}
+<<<<<<< HEAD
 	
 	public void inserthardcodedStudentAndCourse() {
 		Student student=new Student("jack");
@@ -73,5 +77,7 @@ public class StudentRepository {
 		
 
 	}
+=======
+>>>>>>> parent of 4f80645 (. Step 40 - ManyToMany Mapping - Insert Student and Course)
 
 }

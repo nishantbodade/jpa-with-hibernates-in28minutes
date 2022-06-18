@@ -78,7 +78,7 @@ class CourserepositoryTest {
 	@Transactional
 	public void retriveReviewForCorse() {
 		Employee course=repository.findById(10001L);
-		logger.info("{}",course.getReviews());
+	//	logger.info("{}",course.getReviews());
 	}
 	
 	@Test
